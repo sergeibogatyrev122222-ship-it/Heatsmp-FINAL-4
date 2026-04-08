@@ -1,0 +1,100 @@
+# HeatSMP Configuration
+
+heat:
+  # Max heat value
+  max: 100
+  # Heat gained per hit dealt
+  hit-dealt: 4
+  # Heat gained per hit received
+  hit-received: 3
+  # Heat gained per second while sprinting in combat
+  sprint-per-second: 0
+  # Seconds after last combat action before cooling begins
+  combat-tag-seconds: 4
+  # Heat lost per second while idle (not in combat)
+  idle-cooldown-per-second: 3
+  # Heat lost per second while sneaking
+  sneak-cooldown-per-second: 6
+  # Heat lost per second while in water
+  water-cooldown-per-second: 15
+
+# Heat thresholds for buffs
+buffs:
+  tier1-min: 25   # Speed I
+  tier2-min: 50   # Strength I
+  tier3-min: 75   # Strength II + Speed II
+  overheat-min: 90 # Burning zone
+
+# Overheat settings
+overheat:
+  # Damage per second while overheated (in half-hearts)
+  damage-per-second: 1.0
+  # Extra damage at max heat (100)
+  max-heat-extra-damage: 0.5
+
+# Abilities
+abilities:
+  flame-dash:
+    heat-cost: 20
+    cooldown-seconds: 8
+    dash-power: 1.4
+    fire-trail-duration-ticks: 40
+  heat-burst:
+    heat-cost: 40
+    cooldown-seconds: 12
+    knockback-power: 2.0
+    explosion-radius: 3.0
+  emergency-cool:
+    weakness-duration-seconds: 4
+    cooldown-seconds: 30
+
+# Heat Streaks
+streaks:
+  enabled: true
+  # Number of hits for streak bonus
+  combo-threshold: 3
+  # Extra heat gained per hit during streak
+  bonus-heat: 4
+  # Seconds before combo resets
+  combo-reset-seconds: 3
+
+# Lava Zones - define regions (requires WorldGuard or use coordinates)
+# Format: worldName,x1,y1,z1,x2,y2,z2
+lava-zones:
+  enabled: false
+  heat-multiplier: 1.5
+  zones: []
+  #  - "world,100,60,100,150,80,150"
+
+# Cooling Pearl item
+cooling-pearl:
+  heat-reduction: 30
+  cooldown-seconds: 20
+
+# Heat Enchant
+heat-enchant:
+  enabled: true
+  # Extra heat gained per hit (multiplicative)
+  heat-gain-multiplier: 1.3
+  # Overheat threshold reduced by this amount
+  overheat-threshold-reduction: 10
+
+# Visual Effects
+effects:
+  # Particle update interval in ticks
+  particle-update-ticks: 10
+  # Whether to broadcast overheat sound to nearby players
+  broadcast-overheat-sound: true
+
+# Messages (supports & color codes)
+messages:
+  prefix: "&8[&c🔥 Heat&8] &r"
+  overheat: "&cYou are OVERHEATING! Cool down NOW!"
+  cooled-down: "&bYou have cooled down."
+  ability-no-heat: "&cNot enough heat to use that ability!"
+  ability-on-cooldown: "&eAbility on cooldown for &f{time}s&e!"
+  ability-used-flamedash: "&6🔥 Flame Dash activated!"
+  ability-used-heatburst: "&c💥 Heat Burst released!"
+  ability-used-emergencycool: "&b🧯 Emergency Cool used! You feel weakened..."
+  cooling-pearl-used: "&b❄ Cooling Pearl absorbed &f30 heat&b!"
+  cooling-pearl-cooldown: "&eCooling Pearl on cooldown for &f{time}s&e!"

@@ -1,0 +1,32 @@
+name: HeatSMP
+version: 1.1.0
+main: dev.heatsmp.HeatSMPPlugin
+api-version: '1.21'
+description: Heat-based PvP system for SMP servers
+author: HeatSMP
+
+commands:
+  heat:
+    description: Check your current heat level
+    usage: /heat [player]
+    aliases: [h]
+  heatadmin:
+    description: Admin commands for the heat system
+    usage: /heatadmin <set|reset|reload|give|enchant> [player] [value]
+    permission: heatsmp.admin
+  ability:
+    description: Use an ability
+    usage: /ability <flamedash|heatburst|emergencycool>
+    aliases: [ab]
+  recipe:
+    description: View crafting recipes for HeatSMP items
+    usage: /recipe [item]
+    aliases: [recipes]
+
+permissions:
+  heatsmp.admin:
+    description: Access to HeatSMP admin commands
+    default: op
+  heatsmp.use:
+    description: Allows use of the heat system
+    default: true
